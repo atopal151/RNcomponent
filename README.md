@@ -1,6 +1,6 @@
 # RNcomponent
 
-## Firebase --> 
+## Firebase
 
 ### Cloud Firestore
     Update, Delete, Add
@@ -8,7 +8,8 @@
 ## Authentication
     Email-PAssword, Anonymous
 
-## Axios --> REST Apı
+## Axios 
+    REST Apı
 
 
 
