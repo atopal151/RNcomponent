@@ -6,6 +6,7 @@
     Update, Delete, Add
   
 ## Authentication
+    Email-PAssword, Anonymous
 
 ## Axios --> REST Apı
 
