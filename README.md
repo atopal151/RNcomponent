@@ -2,9 +2,9 @@
 
 ## Firebase --> 
 
-  ###Cloud Firestore
-    #### Update, Delete, Add
-  ###Authentication
+  Cloud Firestore
+  Update, Delete, Add
+  Authentication
 
 ## Axios --> REST Apı
 
