@@ -3,7 +3,7 @@
 ## Firebase --> 
 
 ### Cloud Firestore
-### Update, Delete, Add
+    Update, Delete, Add
   
 ## Authentication
 
