@@ -2,6 +2,10 @@
   package='com.rncomponent'>
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
 
     <application
       android:name=".MainApplication"
@@ -22,5 +26,8 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+      <meta-data android:name="com.google.android.geo.API_KEY" 
+      android:value="AIzaSyAM3jkQr7-P1lK4MmMp20KPNXxWIlkRfuo"/>
+      <uses-library android:name="org.apache.http.legacy" android:required="false"/>
     </application>
 </manifest>

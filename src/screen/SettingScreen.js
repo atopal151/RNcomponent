@@ -47,7 +47,7 @@ export default class SettingScreen extends Component {
                 Welcome !
               </Heading>
 
-              <View style={{margin:20, backgroundColor:'#dfe4ea',borderRadius:20, elevation:4}}>
+              <View style={{margin:20, backgroundColor:'white',borderRadius:20, elevation:4}}>
               <Heading margin={10} size="md" fontWeight="400" color="coolGray.800" _dark={{
                 color: "coolGray.800"
               }}>

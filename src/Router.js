@@ -44,7 +44,6 @@ function ContactStackScreen() {
                     headerShown: true
                 }}
             />
-
         </ContactStack.Navigator>
     );
 }
@@ -138,10 +137,8 @@ export default class Router extends Component {
                         drawerStyle: { width: 100 }
                     }}>
                     <Drawer.Screen style={{ flex: 1, }} name='Signin' component={SignIn} options={{ headerShown: false }} />
-
                     <Drawer.Screen name='TabNav' component={TabNavStack} options={{ headerShown: false }} />
                     <Drawer.Screen name='Signup' component={Signup} options={{ headerShown: false }} />
-
                 </Drawer.Navigator>
             </NavigationContainer>
         )

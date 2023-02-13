@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { FlatList,Text, StyleSheet, View, Button, TouchableOpacity, Image, TextInput, ActivityIndicator } from 'react-native'
+import { FlatList,Text, StyleSheet, View, Button, TouchableOpacity, Image, TextInput, ActivityIndicator,Alert } from 'react-native'
 import axios from 'axios';
 
 export default class ContactScreen extends Component {
@@ -60,7 +60,9 @@ export default class ContactScreen extends Component {
   renderContactItem = ({ item, index }) => {
     return (
       <TouchableOpacity style={[styles.itemContainer,
-      { backgroundColor: index % 2 === 1 ? '#ebebeb' : '' }]}>
+      { backgroundColor: index % 2 === 1 ? '#ebebeb' : '' }]} onPress={()=>{
+        Alert.alert('User Info',`Name: ${item.name.first} ${item.name.last}\nLocation: ${item.location.state} ${item.location.city} \nCountry: ${item.country}`);
+      }}>
         <Image style={styles.avatar} source={{ uri: item.picture.thumbnail }} />
         <View style={styles.textContainer}>
           <Text style={styles.name}>{item.name.first}{item.name.last}</Text>
