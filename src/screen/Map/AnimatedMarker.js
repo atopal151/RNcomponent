@@ -35,7 +35,6 @@ export default class AnimatedMarker extends Component {
     }
     return (
       <Animated.View style={[styles.marker,animatedStyles]}/>
-     
     )
   }
 }

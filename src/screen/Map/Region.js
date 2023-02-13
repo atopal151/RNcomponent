@@ -10,7 +10,6 @@ export default class Region extends Component {
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         },
-        
       }
     
       componentDidMount() {
@@ -42,7 +41,6 @@ export default class Region extends Component {
       container: {
         flex: 1,
         backgroundColor: '#f5fcff'
-    
       },
       map: {
         flex: 1

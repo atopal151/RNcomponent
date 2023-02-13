@@ -6,9 +6,7 @@ import Region from './Map/Region'
 export default class MapScreen extends Component {
   render() {
     return (
-      
        <Markers/>
-      
     )
   }
 }

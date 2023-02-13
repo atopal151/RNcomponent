@@ -32,9 +32,6 @@ export default class SettingScreen extends Component {
     })
   }
 
-
-
-
   render() {
     return (
       <ScrollView>
@@ -47,7 +44,7 @@ export default class SettingScreen extends Component {
                 Welcome !
               </Heading>
 
-              <View style={{margin:20, backgroundColor:'white',borderRadius:20, elevation:4}}>
+              <View style={styles.itemCard}>
               <Heading margin={10} size="md" fontWeight="400" color="coolGray.800" _dark={{
                 color: "coolGray.800"
               }}>
@@ -69,7 +66,7 @@ export default class SettingScreen extends Component {
                   </Heading>}
               </Heading>
               </View>
-              <Button style={{ margin: 20 ,borderRadius:50}} colorScheme='warning' onPress={() => {
+              <Button style={styles.btnStyle} colorScheme='warning' onPress={() => {
                 auth().signOut().then(() => {
                   console.log('Sign Out');
                   this.props.navigation.navigate('Signin')
@@ -85,8 +82,14 @@ export default class SettingScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+  itemCard:{
+    margin:20, backgroundColor:'white',borderRadius:20, elevation:4
+  },
   container: {
     flex: 1, justifyContent: 'center', alignItems: 'center',
+  },
+  btnStyle:{
+    margin: 20 ,borderRadius:50
   },
   listStyle: {
     backgroundColor: '#dcdde1',

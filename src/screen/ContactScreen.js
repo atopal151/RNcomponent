@@ -26,7 +26,6 @@ export default class ContactScreen extends Component {
     });
     const { data: { results: contacts } } = await axios.get(`https://randomuser.me/api/?results=30&page=${this.state.page}`);
     const users = [...this.state.contacts, ...contacts];
-
     if (this.state.refreshing) {
       users.reverse();
     }
@@ -84,7 +83,6 @@ export default class ContactScreen extends Component {
 
   renderHeader =()=>{
     const {text}=this.state;
-
     return(
       <View style={styles.searchContainer}>
         <TextInput onFocus={()=>this.duringMomentum=true} 
@@ -105,11 +103,9 @@ export default class ContactScreen extends Component {
     return (
       <View style={{paddingVertical:20}}>
         <ActivityIndicator size="large"/> 
-
       </View>
     )
   }
-
 
   render() {
     return (
@@ -157,6 +153,4 @@ const styles = StyleSheet.create({
       padding: 10,
       marginVertical: 30,
   }
-
-
 })

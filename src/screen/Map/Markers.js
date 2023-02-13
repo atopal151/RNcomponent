@@ -66,7 +66,6 @@ export default class Markers extends Component {
       <View style={styles.container}>
 
         <MapView
-       
           style={styles.map}
           region={this.state.region}>
           {
@@ -91,9 +90,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5fcff',
-
-
-
   },
   map: {
     flex: 1

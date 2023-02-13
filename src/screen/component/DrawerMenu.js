@@ -11,9 +11,6 @@ export default class DrawerMenu extends Component {
     }
   }
 
-
-
-
   render() {
 
     return (
@@ -62,18 +59,15 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     borderRadius: 5,
-
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'red',
     justifyContent: 'center'
-
   },
   menuText: {
     fontSize: 13,
     color: '#333',
     margin: 5
-
   },
   iconStyle: {
     height: 50,

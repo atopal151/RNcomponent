@@ -7,7 +7,6 @@ import { NativeBaseProvider, Box, Heading, VStack, Button, FormControl, Input, T
 
 
 
-
 export default class HomeScreen extends Component {
 
   state = {
@@ -33,9 +32,6 @@ export default class HomeScreen extends Component {
       console.log(this.state.userDataId);
     })
   }
-
-
-
 
   render() {
     return (
@@ -112,7 +108,6 @@ export default class HomeScreen extends Component {
                             console.log(this.state.dataId);
                           }}>Seç</Button>
                         </View>
-
                       </View>
                     </View>
                     )}
