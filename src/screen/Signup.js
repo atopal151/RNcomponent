@@ -13,17 +13,14 @@ export default class Signup extends Component {
             passwordText1: '',
             confirmPassText: ''
         }
-
-
-
     } 
 
     render() {
         return (
-
             <NativeBaseProvider>
                 <View style={styles.container}>
                     <Box safeArea p="2" w="90%" maxW="290" py="8">
+                        
                         <Heading size="lg" color="coolGray.800" _dark={{
                             color: "warmGray.50"
                         }} fontWeight="semibold">
@@ -58,24 +55,21 @@ export default class Signup extends Component {
                                     ref={this.props.InputRef}
                                 />
                             </FormControl>
-                            <Button mt="2" colorScheme="indigo" style={styles.btnStyle}
+                            <Button mt="2" backgroundColor='#0db382' style={styles.btnStyle}
                                 onPress={async () => {
                                     await auth().createUserWithEmailAndPassword(this.state.emailText,this.state.passwordText1)
                                          .then(() => {
                                              console.log('User account created & sign in');
                                              console.log(auth().currentUser);
                                              this.props.navigation.navigate('TabNav')
- 
                                          }).catch(error => {
                                              if (error.code === 'auth/email-already-in-use') {
                                                  console.log('that email address is allready in use!');
- 
                                              }
                                              if (error.code === 'auth/invalid-email') {
                                                  console.log('that email address is invalid');
                                              }
                                              console.error(error);
- 
                                          })
                                 }} >
                                 Sign up
@@ -87,7 +81,7 @@ export default class Signup extends Component {
                                     I have an account.{" "}
                                 </Text>
                                 <Link _text={{
-                                    color: "indigo.500",
+                                    color: "#0e7f59",
                                     fontWeight: "medium",
                                     fontSize: "sm"
                                 }} onPress={() => {

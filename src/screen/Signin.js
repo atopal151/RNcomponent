@@ -6,57 +6,65 @@ import { useNavigation } from '@react-navigation/native'
 import Signup from './Signup'
 import { NativeBaseProvider } from 'native-base'
 import auth from '@react-native-firebase/auth'
+import BirdBody from './Animation/BirdBody'
 
 export default class SignIn extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             emailText: '',
-            passwordText: ''
+            passwordText: '',
+            textEmpty:true
         }
     }
 
     componentDidMount() {
+        console.log(this.state.textEmpty);
         if (auth().currentUser !== null) {
             console.log(`User: ${auth().currentUser.email}`);
             this.props.navigation.navigate('TabNav')
         }
     }
 
-
-
     render() {
         return (
             <NativeBaseProvider  >
                 <View style={styles.container}>
+                    <BirdBody />
                     <Box safeArea p="2" py="8" w="90%" maxW="290"  >
-                        <Heading size="xl" fontWeight="600" color="coolGray.800" _dark={{
-                            color: "coolGray.800"
-                        }}>
-                            Welcome
-                        </Heading>
+                       
                         <Heading mt="1" _dark={{
-                            color: "warmGray.200"
-                        }} color="coolGray.600" fontWeight="medium" size="xs">
-                            Sign in to continue!
+                            color: "warmGray.800"
+                        }} color="coolGray.800" fontWeight="900" size="xs">
+                            Sign in { <Heading size="xs" fontWeight="600" color="coolGray.500" _dark={{
+                            color: "coolGray.500"
+                        }}>
+                            to continue!
+                        </Heading>}
                         </Heading>
                         <VStack space={3} mt="5">
                             <FormControl >
                                 <FormControl.Label>Email</FormControl.Label>
                                 <Input {...this.props}
                                     value={this.state.emailText}
-                                    onChangeText={emailText => this.setState({ emailText })}
+                                    onChangeText={emailText => this.setState({ emailText,textEmpty  })}
+                                    onFocus={()=>{
+                                        this.state.textEmpty=true
+                                        console.log(this.state.textEmpty);}}
                                     ref={this.props.InputRef} />
                             </FormControl>
                             <FormControl>
                                 <FormControl.Label>Password</FormControl.Label>
                                 <Input type="password" {...this.props}
                                     value={this.state.passwordText}
-                                    onChangeText={passwordText => this.setState({ passwordText })}
-                                    ref={this.props.InputRef} />
+                                    onChange={()=>{this.state.textEmpty=false}}
+                                    onChangeText={passwordText => this.setState({ passwordText,textEmpty})}
+                                    onFocus={()=>{
+                                        this.state.textEmpty=false
+                                        console.log(this.state.textEmpty);}}
+                                     ref={this.props.InputRef} />
                             </FormControl>
-                            <Button mt="2" colorScheme="indigo" style={styles.btnStyle} onPress={async () => {
+                            <Button mt="2"  backgroundColor='#0db382' style={styles.btnStyle} onPress={async () => {
                                 await auth().signInWithEmailAndPassword(this.state.emailText, this.state.passwordText)
                                     .then(() => {
                                         console.log('User signed in!');
@@ -82,7 +90,7 @@ export default class SignIn extends Component {
                                     I'm a new user.{" "}
                                 </Text>
                                 <Link _text={{
-                                    color: "indigo.500",
+                                    color: '#0e7f59',
                                     fontWeight: "medium",
                                     fontSize: "sm"
                                 }} onPress={() => {
@@ -95,7 +103,6 @@ export default class SignIn extends Component {
                     </Box>
                 </View>
             </NativeBaseProvider>
-
         )
     }
 }
